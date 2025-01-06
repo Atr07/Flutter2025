@@ -43,8 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Hello World',
+            const Text.rich(
+              TextSpan(
+                text: 'Hello', // default text style
+                children: <TextSpan>[
+                  TextSpan(text: ' beautiful ', style: TextStyle(fontStyle: FontStyle.italic)),
+                  TextSpan(text: 'world', style: TextStyle(fontWeight: FontWeight.bold)),
+                ],
+              ),
             ),
           ],
         ),
