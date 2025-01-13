@@ -42,10 +42,10 @@ class _WeatherHomeState extends State<HomePage> {
             const Text(
               'Weather App',
             ),
-            /*ElevatedButton(
-              onPressed: locationPermissionStatus(),
+            ElevatedButton(
+              onPressed: locationPermissionStatus,
               child: Text('Get Location'),
-            ),*/
+            ),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
