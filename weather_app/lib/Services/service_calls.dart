@@ -7,8 +7,7 @@ import '../Model/weather_model.dart';
 class WeatherServices {
   fetchWeather() async {
     final response = await http.get(
-      Uri.parse(
-          "https://api.openweathermap.org/"),
+      Uri.parse("https://api.weatherapi.com/v1/current.json?q="),
     );
 
     try {
