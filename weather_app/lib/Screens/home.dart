@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../Services/service_calls.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -21,6 +23,7 @@ class _WeatherHomeState extends State<HomePage> {
       // Get the current location
       final position = await Geolocator.getCurrentPosition();
       print('Latitude: ${position.latitude}, Longitude: ${position.longitude}');
+      WeatherServices().fetchWeather('${position.latitude}', '${position.longitude}');
     } else {
       // Permission denied
       print('Location permission denied.');

@@ -3,11 +3,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../Model/weather_model.dart';
+import '../api_key.dart';
 
 class WeatherServices {
-  fetchWeather() async {
+  fetchWeather(String lat, String long) async {
     final response = await http.get(
-      Uri.parse("https://api.weatherapi.com/v1/current.json?q="),
+      Uri.parse("https://api.weatherapi.com/v1/current.json?key=$weatherApiKey&q=$lat,$long"),
     );
 
     try {
